@@ -46,7 +46,11 @@ gtkwave tb_good_mux.vcd
 
 ## 1.3 Introduction to Yosys and Logic Synthesizer
 ### What is a synthesizer?
-Synthesizer is a tool to convert RTL to netlist. Yosys is the synthesizer used in this course. 
+Synthesizer is a tool to convert RTL to netlist. Yosys is the synthesizer used in this course. `read_verilog` is the command used to read the verilog design, `read_liberty` is the command used to read the standard cell library (.lib) and `write_verilog` is used to write the netlist. Basically, netlist is the representation of the design in terms of standard cells present in the .lib file.
 <p align="center">
-  <img width=""1000 height="600" src="/Images/Pic4.png">
+  <img width=""1000 height="500" src="/Images/Pic4.png">
+</p><br>
+To verify the generated netlist, iverilog simulator is used. 
+<p align="center">
+  <img width=""1000 height="400" src="/Images/Pic5.png">
 </p><br>
