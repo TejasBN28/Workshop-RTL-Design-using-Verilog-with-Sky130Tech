@@ -5,6 +5,10 @@ A report on 5 day workshop on RTL design and synthesis using opensource tools - 
     - [1.1 Introduction](#11-Introduction)
     - [1.2 Introduction to iverilog and gtkwave based simulation](#12-Introduction-to-iveriilog-and-gtkwave-based-simulation)
     - [1.3 Introduction to Yosys and Logic Synthesizer](#13-Introduction-to-Yosys-and-Logic-Synthesizer)
+  - [Day-2- Timing Libraries, Hierarchical and Flat Synthesis](#2-Timing-Libraries-Hierarchical-and-Flat-Synthesis)
+    - [1.1 Introduction](#11-Introduction)
+    - [1.2 Introduction to iverilog and gtkwave based simulation](#12-Introduction-to-iveriilog-and-gtkwave-based-simulation)
+    - [1.3 Introduction to Yosys and Logic Synthesizer](#13-Introduction-to-Yosys-and-Logic-Synthesizer)
 
 # 1. Introduction to Verilog RTL Design and Synthesis
 ## 1.1 Introduction
@@ -85,3 +89,13 @@ The generated circuit and the netlist are shown below.
 <p align="center">
   <img width=""300 height="600" src="/Images/Pic8.png">
 </p><br>
+
+# 1. Timing Libraries, Hierarchical and Flat Synthesis
+
+
+
+
+
+
+
+
