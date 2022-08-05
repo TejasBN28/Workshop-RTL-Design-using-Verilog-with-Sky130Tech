@@ -100,7 +100,18 @@ When we look into any library, three important factrors are
   <img src="/Images/Pic9.png">
 </p><br>
 
-
+Other impoertant information is mentioned in the library, such as technology, delay models, units of power, delay, resistance, capacitance, etc.
+<p align="center">
+  <img src="/Images/Pic10.png">
+</p><br>
+Also, operating conditions of the design is mentioned.
+<p align="center">
+  <img src="/Images/Pic11.png">
+</p><br>
+Keyword cell is used to define the keyword. As discussed earlier, there are different flavours of the same gate with varying area, power and delays. As an example, 2-ip AND gate is shown. Since 2-ip AND gate has 2 inputs, there are 4 possible input combinations. Power consumption of all the possible input combinations is mentioned in the `.lib` file. 
+<p align="center">
+  <img src="/Images/Pic12.png">
+</p><br>
 
 
 
