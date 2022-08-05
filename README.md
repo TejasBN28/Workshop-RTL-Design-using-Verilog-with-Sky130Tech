@@ -233,7 +233,7 @@ endmodule
 ```
 Here, this multiplier is implemented as `a*8 + a*1`. Since a is 3-bit, it `a*9 = aa`
 <p align="center">
-  <img src="/Images/Pic22png">
+  <img src="/Images/Pic22.png">
 </p><br>
 
 
