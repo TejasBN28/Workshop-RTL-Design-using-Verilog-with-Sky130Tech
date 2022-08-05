@@ -311,3 +311,21 @@ module opt_check4 (input a , input b , input c , output y);
 </p><br>
 
 ## 3.3 Sequential Logic Optimizations
+### Example-1
+```
+module dff_const1(input clk, input reset, output reg q);
+	always @(posedge clk, posedge reset)
+	begin
+		if(reset)
+			q <= 1'b0;
+		else
+			q <= 1'b1;
+	end
+endmodule
+```
+<p align="center">
+  <img src="/Images/Pic27.png">
+</p><br>
+<p align="center">
+  <img src="/Images/Pic28.png">
+</p><br>
