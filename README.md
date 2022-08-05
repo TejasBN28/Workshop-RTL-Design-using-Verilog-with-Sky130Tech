@@ -8,7 +8,7 @@ A report on 5 day workshop on RTL design and synthesis using opensource tools - 
   - [Day-2- Timing Libraries, Hierarchical and Flat Synthesis](#2-Timing-Libraries-Hierarchical-and-Flat-Synthesis)
     - [2.1 Introduction to Timing Libraries](#21-Introduction-to-Timing-Libraries)
     - [2.2 Hierarchical Synthesis and Flat Synthesis](#22-Hierarchical-Synthesis-and-Flat-Synthesis)
-    - [1.3 Introduction to Yosys and Logic Synthesizer](#13-Introduction-to-Yosys-and-Logic-Synthesizer)
+    - [2.3 Various Flip Flop coding Styles and Optimizations](#23-Various-Flip-Flop-coding-Styles-and-Optimizations)
 
 # 1. Introduction to Verilog RTL Design and Synthesis
 ## 1.1 Introduction
@@ -148,8 +148,6 @@ There are two circumstances when we do this
  - Module level synthesis is preferred when we have multiple instances of the same module. For example, if a design uses n multipliers where n is a large number, then, we synthesise the multiplier once and use it multiple times.
  - This approach is used for divide and conquer. If the design is too massive for the synthesis tool, we synthesis mudule by module and stitch them to get the entire design. 
 
-
-
-
+## 2.3 Various Flip Flop coding Styles and Optimizations
 
 
