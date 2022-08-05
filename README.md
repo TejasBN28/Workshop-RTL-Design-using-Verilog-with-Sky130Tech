@@ -3,7 +3,8 @@ A report on 5 day workshop on RTL design and synthesis using opensource tools - 
 # Table of contents
  - [Day-1- Introduction to Verilog RTL Design and Synthesis](#1-Introduction-to-Verilog-RTL-Design-and-Synthesis)
     - [1.1 Introduction](#11-Introduction)
-    - [1.2 Introduction to iverilog and gtkwave based simulation](#11-Introduction-to-iveriilog-and-gtkwave-based-simulation)
+    - [1.2 Introduction to iverilog and gtkwave based simulation](#12-Introduction-to-iveriilog-and-gtkwave-based-simulation)
+    - [1.3 Introduction to Yosys and Logic Synthesizer](#13-Introduction-to-Yosys-and-Logic-Synthesizer)
 
 # 1. Introduction to Verilog RTL Design and Synthesis
 ## 1.1 Introduction
@@ -31,12 +32,21 @@ Iverilog takes the design and testbench as the input and generates a `vcd` file 
   <img width=""1000 height="400" src="/Images/Pic2.png">
 </p><br>
 As an example, goodmux.v is simulated with the testbench tb_goodmux.v.
+
 ```
 cd verilog_files
 iverilog good_mux.v tb_good_mux.v
 ./a.out
 gtkwave tb_good_mux.vcd
 ```
+
 <p align="center">
-  <img width=""1000 height="400" src="/Images/Pic3.png">
+  <img width=""1000 height="250" src="/Images/Pic3.png">
+</p><br>
+
+## 1.3 Introduction to Yosys and Logic Synthesizer
+### What is a synthesizer?
+Synthesizer is a tool to convert RTL to netlist. Yosys is the synthesizer used in this course. 
+<p align="center">
+  <img width=""1000 height="600" src="/Images/Pic4.png">
 </p><br>
