@@ -13,5 +13,5 @@ Testbench is the setup to apply stimulus to the design to check for its function
 ### Simulator and its working
 Simulator is a tool used for checking a verilog design. RTL design is basically the implementation of the design specifications. RTL design is checked for adherence to the specifications by simulating the design. Simulator looks for changes on the input signals. Upon any chaange to the input, output is evaluated. If there are no changes in the input, simulator will not evaluate the output. 
 <p align="center">
-  <img width="350" height="200" src="/images/pic1.png">
+  <img src="/Images/Pic1.png">
 </p><br>
