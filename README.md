@@ -143,7 +143,10 @@ We get the following schematic.
   <img src="/Images/Pic14.png">
 </p><br>
 
-
+## We can perform module level synthesis as well. But why do this?
+There are two circumstances when we do this 
+ - Module level synthesis is preferred when we have multiple instances of the same module. For example, if a design uses n multipliers where n is a large number, then, we synthesise the multiplier once and use it multiple times.
+ - This approach is used for divide and conquer. If the design is too massive for the synthesis tool, we synthesis mudule by module and stitch them to get the entire design. 
 
 
 
