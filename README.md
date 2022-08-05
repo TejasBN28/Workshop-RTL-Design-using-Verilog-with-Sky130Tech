@@ -84,15 +84,21 @@ write_verilog -noattr good_mux_synth.v
 
 The generated circuit and the netlist are shown below. 
 <p align="center">
-  <img width=""1000 height="200" src="/Images/Pic7.png">
+  <img src="/Images/Pic7.png">
 </p>
 <p align="center">
-  <img width=""300 height="600" src="/Images/Pic8.png">
+  <img src="/Images/Pic8.png">
 </p><br>
 
 # 2. Timing Libraries, Hierarchical and Flat Synthesis
 ## 2.1 Introduction to Timing Libraries
-
+When we look into any library, three important factrors are 
+ - Process: Signifies some variation due to fabrication
+ - Voltage: Voltage of operation
+ - Temperature: Ideal temperature of Silicon
+<p align="center">
+  <img src="/Images/Pic9.png">
+</p><br>
 
 
 
