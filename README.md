@@ -10,7 +10,7 @@ A report on 5 day workshop on RTL design and synthesis using opensource tools - 
     - [2.2 Hierarchical Synthesis and Flat Synthesis](#22-Hierarchical-Synthesis-and-Flat-Synthesis)
     - [2.3 Various Flip Flop coding Styles and Optimizations](#23-Various-Flip-Flop-coding-Styles-and-Optimizations)
     - [2.4 Interesting Optimizations](#24-Interesting-Optimizations)
-  - [Day-3- Combinational and Sequential Optimization](#2-Combinational-and-Sequential-Optimization)
+  - [Day-3- Combinational and Sequential Optimization](#3-Combinational-and-Sequential-Optimization)
   
 # 1. Introduction to Verilog RTL Design and Synthesis
 ## 1.1 Introduction
