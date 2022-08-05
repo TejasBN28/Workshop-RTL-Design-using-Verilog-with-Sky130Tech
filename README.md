@@ -68,3 +68,18 @@ But faster cells have wider mosfets, hence they
 - May cause hold time violations
 
 So, slower cells are also required to meet the hold time constraints. So, guidance is offered to the synthesizer to select the cells appropriately in the form of constraints.
+As an example, good_mux.v is synthesized. Go to the file verilog_files and type `yosys`. This invokes yosys.
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog good_mux.v
+synth -top good_mux
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+write_verilog -noattr good_mux_synth.v
+```
+<p align="center">
+  <img width=""1000 height="20" src="/Images/Pic7.png">
+</p><br>
+<p align="center">
+  <img width=""300 height="600" src="/Images/Pic8.png">
+</p><br>
