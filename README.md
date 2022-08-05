@@ -329,3 +329,108 @@ endmodule
 <p align="center">
   <img src="/Images/Pic28.png">
 </p><br>
+
+### Example-2
+```
+module dff_const2(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b1;
+	else
+		q <= 1'b1;
+end
+
+endmodule
+```
+Here, since the output is always 1, just a buffer is sufficient. No need of flipflop.
+<p align="center">
+  <img src="/Images/Pic29.png">
+</p><br>
+
+
+### Example-3
+```
+module dff_const3(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b1;
+		q1 <= 1'b0;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+```
+<p align="center">
+  <img src="/Images/Pic30.png">
+</p><br>
+<p align="center">
+  <img src="/Images/Pic31.png">
+</p><br>
+
+### Example-4
+```
+module dff_const4(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b1;
+		q1 <= 1'b1;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+```
+Here, since the output is always 1, just a buffer is sufficient. No need of flipflop.
+<p align="center">
+  <img src="/Images/Pic32.png">
+</p><br>
+<p align="center">
+  <img src="/Images/Pic33.png">
+</p><br>
+
+### Example-5
+```
+module dff_const5(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b0;
+		q1 <= 1'b0;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+```
+Here, no optimizations are possible
+<p align="center">
+  <img src="/Images/Pic34.png">
+</p><br>
+<p align="center">
+  <img src="/Images/Pic35.png">
+</p><br>
