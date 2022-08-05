@@ -57,3 +57,14 @@ To verify the generated netlist, iverilog simulator is used. <br>
 
 ### Why different flavours of gates?
 The .lib file is a collection of logical modules. Any digital design can be implemented with the cells present in the stand cell library file. It includes logic gates like AND, OR, NOT, NAND, D_FFs, ....... etc. Also, it includes different flavours of the same gates such as 2-ip AND gate, 3-ip AND gate, 4-ip AND gate etc with different variations in speed, power and area. Yosys is the synthesizer used in this course. 
+
+Combinational delay in logic patth determines the maximum speed of operation of digital logic circuit. So we need cells that work fast to decrease the Tclk. Basically, the faster cells have wider mosfets to increase their current driving capacities. 
+<p align="center">
+  <img width=""1000 height="200" src="/Images/Pic6.png">
+</p><br>
+But faster cells have wider mosfets, hence they 
+
+- require more area (due to wider mosfets) and power (due to larger currents)
+- May cause hold time violations
+
+So, slower cells are also required to meet the hold time constraints. So, guidance is offered to the synthesizer to select the cells appropriately in the form of constraints.
