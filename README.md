@@ -149,5 +149,65 @@ There are two circumstances when we do this
  - This approach is used for divide and conquer. If the design is too massive for the synthesis tool, we synthesis mudule by module and stitch them to get the entire design. 
 
 ## 2.3 Various Flip Flop coding Styles and Optimizations
+In a combinational circuit, when the inputs are altered, the output changes after the circuit's propagation delay. If several pathways with differing propagation delays are used during data propagation, there may be a probability of an output glitch. Because more glitches arise when there are more combinational circuits in the design, the output becomes unstable. We are opting for flops to store the data from the communication lines in order to address this issue. When a flop is utilised, the output of the combinational circuit is stored in it and transmitted only at the positive or negative edge of the clock so that the subsequent combinational circuit receives a glitch-free input, stabilising the output. The set and reset control pins of a flop are used as initialization signals because without them, the following combinational circuit would get a trash value. Both synchronous and asynchronous control pins are possible.
 
+### D Flip Flop with Asynchronous Reset
+```
+module dff_asyncres ( input clk ,  input async_reset , input d , output reg q );
+always @ (posedge clk , posedge async_reset)
+begin
+	if(async_reset)
+		q <= 1'b0;
+	else	
+		q <= d;
+end
+endmodule
+```
+<p align="center">
+  <img src="/Images/Pic15.png">
+</p><br>
+
+<p align="center">
+  <img src="/Images/Pic16.png">
+</p><br>
+
+### D Flip Flop with Asynchronous Set
+```
+module dff_async_set ( input clk ,  input async_set , input d , output reg q );
+always @ (posedge clk , posedge async_set)
+begin
+	if(async_set)
+		q <= 1'b1;
+	else	
+		q <= d;
+end
+endmodule
+```
+<p align="center">
+  <img src="/Images/Pic17.png">
+</p><br>
+
+<p align="center">
+  <img src="/Images/Pic18.png">
+</p><br>
+
+### D Flip Flop with Synchronous Reset
+```
+module dff_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+always @ (posedge clk )
+begin
+	if (sync_reset)
+		q <= 1'b0;
+	else	
+		q <= d;
+end
+endmodule
+```
+<p align="center">
+  <img src="/Images/Pic19.png">
+</p><br>
+
+<p align="center">
+  <img src="/Images/Pic20.png">
+</p><br>
 
