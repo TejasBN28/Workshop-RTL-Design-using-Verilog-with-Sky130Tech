@@ -437,3 +437,46 @@ Here, no optimizations are possible
 </p><br>
 
 ## 3.4 Sequential Optimization for unused outputs
+### Example 1
+```
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = count[0];
+
+always @(posedge clk ,posedge reset)
+begin
+	if(reset)
+		count <= 3'b000;
+	else
+		count <= count + 1;
+end
+
+endmodule
+```
+Here the output of the module is just sensing the output q as count[0] Basically q toggles on every clock cycle. count[1] and count[2] have no functionality. So one d_ff and one inverter will realize the circuit.
+
+<p align="center">
+  <img src="/Images/Pic36.png">
+</p><br>
+
+### Example 2
+```
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = (count[2:0] == 3'b100);
+
+always @(posedge clk ,posedge reset)
+begin
+	if(reset)
+		count <= 3'b000;
+	else
+		count <= count + 1;
+end
+
+endmodule
+```
+Here, all the three flip flops are inferred.
+
+<p align="center">
+  <img src="/Images/Pic37.png">
+</p><br>
