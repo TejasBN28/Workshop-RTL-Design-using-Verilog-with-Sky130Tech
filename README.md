@@ -11,6 +11,7 @@ A report on 5 day workshop on RTL design and synthesis using opensource tools - 
     - [2.3 Various Flip Flop coding Styles and Optimizations](#23-Various-Flip-Flop-coding-Styles-and-Optimizations)
     - [2.4 Interesting Optimizations](#24-Interesting-Optimizations)
   - [Day-3- Combinational and Sequential Optimization](#3-Combinational-and-Sequential-Optimization)
+    - [3.1 Introduction to Optimizations](#31-Introduction-to-Optimizations)
   
 # 1. Introduction to Verilog RTL Design and Synthesis
 ## 1.1 Introduction
@@ -238,6 +239,21 @@ Here, this multiplier is implemented as `a*8 + a*1`. Since a is 3-bit, it `a*9 =
 </p><br>
 
 # 3. Combinational and Sequential Optimization
+## 3.1 Introduction to Optimizations
+### Combinational Logic Optimizations
+Combinational logic optimizations helps in squeezing the logic to get the most optimized design. Also, optimized logic will be power and area efficient.
+Techniques used for combinational logic optimization are 
+ - Constant Propogation - direct optimization technique
+ - Boolean Logic Optimization - KMap, Quinn Muclusky, etc
+
+### Sequential Logic Optimizations
+Sequential Logic Optimization techniques include
+ - Basic - Sequential Constant Propogation
+ - Advanced
+    - State Optimization
+    - Retiming
+    - Sequential Logic Cloning (Floorplan aware synthesis)
+   
 
 
 
