@@ -214,3 +214,35 @@ endmodule
 
 
 ## 2.4 Interesting Optimizations
+In this lab, we consider the implementation of multipliers.
+```
+module mul2 (input [2:0] a, output [3:0] y);
+	assign y = a * 2;
+endmodule
+```
+Here, yosys implements this design just by left shift operator.
+<p align="center">
+  <img src="/Images/Pic21.png">
+</p><br>
+
+Similarly, 
+```
+module mult8 (input [2:0] a , output [5:0] y);
+	assign y = a * 9;
+endmodule
+```
+Here, this multiplier is implemented as `a*8 + a*1`. Since a is 3-bit, it `a*9 = aa`
+<p align="center">
+  <img src="/Images/Pic22png">
+</p><br>
+
+
+
+
+
+
+
+
+
+
+
