@@ -13,6 +13,7 @@ A report on 5 day workshop on RTL design and synthesis using opensource tools - 
   - [Day-3- Combinational and Sequential Optimization](#3-Combinational-and-Sequential-Optimization)
     - [3.1 Introduction to Optimizations](#31-Introduction-to-Optimizations)
     - [3.2 Combinational Logic Optimizations](#32-Combinational-Logic-Optimizations)
+    - [3.3 Sequential Logic Optimizations](#33-Sequential-Logic-Optimizations)
   
 # 1. Introduction to Verilog RTL Design and Synthesis
 ## 1.1 Introduction
@@ -309,4 +310,4 @@ module opt_check4 (input a , input b , input c , output y);
   <img src="/Images/Pic26.png">
 </p><br>
 
-
+## 3.3 Sequential Logic Optimizations
