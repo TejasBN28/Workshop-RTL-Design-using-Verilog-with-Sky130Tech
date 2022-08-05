@@ -12,6 +12,7 @@ A report on 5 day workshop on RTL design and synthesis using opensource tools - 
     - [2.4 Interesting Optimizations](#24-Interesting-Optimizations)
   - [Day-3- Combinational and Sequential Optimization](#3-Combinational-and-Sequential-Optimization)
     - [3.1 Introduction to Optimizations](#31-Introduction-to-Optimizations)
+    - [3.2 Combinational Logic Optimizations](#32-Combinational_Logic-Optimizations)
   
 # 1. Introduction to Verilog RTL Design and Synthesis
 ## 1.1 Introduction
@@ -254,11 +255,58 @@ Sequential Logic Optimization techniques include
     - Retiming
     - Sequential Logic Cloning (Floorplan aware synthesis)
    
+## 3.2 Combinational Logic Optimizations
+The command used to perform logic optimization of combinational logic is `opt_clean -purge`. Here we consider the example opt_check.v,opt_check2.v, opt_check3.v, opt_check4.v and multiple_module_opt.v.
+
+### Example: opt_check.v
+```
+module opt_check (input a , input b , output y);
+	assign y = a?b:0;
+endmodule
+```
+The commands to run optimizations are
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog opt_check.v
+synth -top opt_check
+opt_clean -purge
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+write_verilog -noattr opt_check_synth.v
+```
+<p align="center">
+  <img src="/Images/Pic23.png">
+</p><br>
+
+### Example: opt_check2.v
+```
+module opt_check2 (input a , input b , output y);
+	assign y = a?1:b;
+endmodule
+```
+<p align="center">
+  <img src="/Images/Pic24.png">
+</p><br>
+
+### Example: opt_check3.v
+```
+module opt_check3 (input a , input b, input c , output y);
+	assign y = a?(c?b:0):0;
+endmodule
+```
+<p align="center">
+  <img src="/Images/Pic25.png">
+</p><br>
 
 
-
-
-
-
+### Example: opt_check4.v
+```
+module opt_check4 (input a , input b , input c , output y);
+ assign y = a?(b?(a & c ):c):(!c);
+ endmodule
+```
+<p align="center">
+  <img src="/Images/Pic26.png">
+</p><br>
 
 
