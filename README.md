@@ -436,4 +436,4 @@ Here, no optimizations are possible
   <img src="/Images/Pic35.png">
 </p><br>
 
-## Sequential Optimization for unused outputs
+## 3.4 Sequential Optimization for unused outputs
