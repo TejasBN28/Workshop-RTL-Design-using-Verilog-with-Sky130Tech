@@ -7,7 +7,7 @@ A report on 5 day workshop on RTL design and synthesis using opensource tools - 
     - [1.3 Introduction to Yosys and Logic Synthesizer](#13-Introduction-to-Yosys-and-Logic-Synthesizer)
   - [Day-2- Timing Libraries, Hierarchical and Flat Synthesis](#2-Timing-Libraries-Hierarchical-and-Flat-Synthesis)
     - [2.1 Introduction to Timing Libraries](#21-Introduction-to-Timing-Libraries)
-    - [1.2 Introduction to iverilog and gtkwave based simulation](#12-Introduction-to-iveriilog-and-gtkwave-based-simulation)
+    - [2.2 Hierarchical Synthesis and Flat Synthesis](#22-Hierarchical-Synthesis-and-Flat-Synthesis)
     - [1.3 Introduction to Yosys and Logic Synthesizer](#13-Introduction-to-Yosys-and-Logic-Synthesizer)
 
 # 1. Introduction to Verilog RTL Design and Synthesis
@@ -100,18 +100,52 @@ When we look into any library, three important factrors are
   <img src="/Images/Pic9.png">
 </p><br>
 
-Other impoertant information is mentioned in the library, such as technology, delay models, units of power, delay, resistance, capacitance, etc.
+Other impoertant information is mentioned in the library, such as technology, delay models, units of power, delay, resistance, capacitance, etc. <br>
 <p align="center">
   <img src="/Images/Pic10.png">
 </p><br>
-Also, operating conditions of the design is mentioned.
+Also, operating conditions of the design is mentioned. <br>
 <p align="center">
   <img src="/Images/Pic11.png">
 </p><br>
-Keyword cell is used to define the keyword. As discussed earlier, there are different flavours of the same gate with varying area, power and delays. As an example, 2-ip AND gate is shown. Since 2-ip AND gate has 2 inputs, there are 4 possible input combinations. Power consumption of all the possible input combinations is mentioned in the `.lib` file. 
+Keyword cell is used to define the keyword. As discussed earlier, there are different flavours of the same gate with varying area, power and delays. As an example, 2-ip AND gate is shown. Since 2-ip AND gate has 2 inputs, there are 4 possible input combinations. Power consumption of all the possible input combinations is mentioned in the `.lib` file. <br><br>
 <p align="center">
   <img src="/Images/Pic12.png">
 </p><br>
+
+## 2.2 Hierarchical Synthesis and Flat Synthesis
+When we perform hierarchical synthesis using the folloing commands,
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog multiple_modules.v
+synth -top multiple_modules
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+write_verilog -noattr multiple_modules_synth.v
+```
+We get the following schematic. 
+<p align="center">
+  <img src="/Images/Pic13.png">
+</p><br>
+
+Whereas, flattened netlist can be generated using the keyword `flatten`. The commands are as follows:
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog multiple_modules.v
+synth -top multiple_modules
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+flatten
+show
+write_verilog -noattr multiple_modules_synth.v
+```
+We get the following schematic. 
+<p align="center">
+  <img src="/Images/Pic14.png">
+</p><br>
+
+
+
+
 
 
 
