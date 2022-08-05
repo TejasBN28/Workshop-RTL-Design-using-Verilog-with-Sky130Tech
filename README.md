@@ -77,9 +77,11 @@ abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 write_verilog -noattr good_mux_synth.v
 ```
+
+The generated circuit and the netlist are shown below. 
 <p align="center">
   <img width=""1000 height="200" src="/Images/Pic7.png">
-</p><br>
+</p>
 <p align="center">
   <img width=""300 height="600" src="/Images/Pic8.png">
 </p><br>
