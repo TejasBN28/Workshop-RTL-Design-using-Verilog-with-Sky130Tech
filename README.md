@@ -9,6 +9,6 @@ A report on 5 day workshop on RTL design and synthesis using opensource tools - 
 ### What is a design?
 Design is the actual verilog code or set of verilog codes which has the intended functionality to meet the required specifications.
 ### What is a testbench?
-Testbench is the setup to apply stimulusto the design to check for its functionality
+Testbench is the setup to apply stimulus to the design to check for its functionality
 ### Simulator and its working
 Simulator is a tool used for checking a verilog design. RTL design is basically the implementation of the design specifications. RTL design is checked for adherence to the specifications by simulating the design. Simulator looks for changes on the input signals. Upon any chaange to the input, output is evaluated. If there are no changes in the input, simulator will not evaluate the output. 
