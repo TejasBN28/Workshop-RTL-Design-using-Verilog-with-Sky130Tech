@@ -480,3 +480,8 @@ Here, all the three flip flops are inferred.
 <p align="center">
   <img src="/Images/Pic37.png">
 </p><br>
+
+We can conclude that all the logicthat does not have imact in determining the primary output of the design, all of the those logics will be eliminated.
+
+# 4. GLS, blocking vs nonblocking and Synthesis-Simulation mismatch
+
