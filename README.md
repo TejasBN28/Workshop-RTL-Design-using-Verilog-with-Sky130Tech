@@ -78,7 +78,7 @@ show
 write_verilog -noattr good_mux_synth.v
 ```
 <p align="center">
-  <img width=""1000 height="20" src="/Images/Pic7.png">
+  <img width=""1000 height="200" src="/Images/Pic7.png">
 </p><br>
 <p align="center">
   <img width=""300 height="600" src="/Images/Pic8.png">
