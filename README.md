@@ -623,3 +623,36 @@ endmodule
 So, we can conclude that nonblocking statements are a better option to design sequential circuits.
 
 # 5. If, case, for and for generate
+## 5.1 If and Case Construct
+If is mainly used to create conditional logic. Syntax of if statement is shown below.
+```
+if (<condition 1>)
+begin
+-----------
+-----------
+end
+else if (<condition 2>)
+begin
+-----------
+-----------
+end
+.
+.
+.
+else 
+begin
+----------
+----------
+end
+```
+
+
+
+
+
+
+
+
+
+
+
