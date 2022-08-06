@@ -622,4 +622,4 @@ endmodule
 
 So, we can conclude that nonblocking statements are a better option to design sequential circuits.
 
-# If, case, for and for generate
+# 5. If, case, for and for generate
