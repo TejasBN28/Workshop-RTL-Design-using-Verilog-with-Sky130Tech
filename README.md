@@ -16,6 +16,9 @@ A report on 5 day workshop on RTL design and synthesis using opensource tools - 
     - [3.3 Sequential Logic Optimizations](#33-Sequential-Logic-Optimizations)
     - [3.4 Sequential Optimization for unused outputs](#34-Sequential-Optimization-for-unused-outputs)
   - [Day-4- GLS, Blocking vs Nonblocking and Synthesis-Simulation Mismatch](#4-GLS-Blocking-vs-Nonblocking-and-Synthesis-Simulation-Mismatch)
+    - [4.1 GLS Concepts And Flow](#41-GLS-Concepts-And-Flow)
+    - [4.2 Synthesis Simulation Mismatch](#42-Synthesis-Simulation-Mismatch)
+    - [4.3 
   
 # 1. Introduction to Verilog RTL Design and Synthesis
 ## 1.1 Introduction
@@ -501,5 +504,119 @@ The possible reasons for Synthesis Simulation Mismatches are
  - Blocking and Nonblocking Assignments
  - Non-standard Verilog Coding Practices
 
-### Missing Sensitivity List
-The simulator works based on the activity, i.e., output will change only when input changes. 
+## 4.3 Missing Sensitivity List
+The simulator works based on the activity, i.e., output will change only when input changes. Consider an example of a mux below.
+```
+module mux (input i0, input i1, input sel, output reg y);
+	always@(sel)
+		begin
+			if(sel)
+				y = i1;
+			else
+				y = i0;
+		end
+endmodule
+```
+Here, we did a major blunder. We have included only `sel` in the sensitivity list. Actually, we should have included `sel`, `i0` and `i1`. So, we get the following wrong waveform. 
+
+<p align="center">
+  <img src="/Images/Pic39.png">
+</p><br>
+
+Alternatively, we can write this code, which works properly. 
+```
+module mux (input i0, input i1, input sel, output reg y);
+	always@()
+		begin
+			if(sel)
+				y = i1;
+			else
+				y = i0;
+		end
+endmodule
+```
+<p align="center">
+  <img src="/Images/Pic40.png">
+</p><br>
+
+
+## 4.4 Blocking and Nonblocking Statements in Verilog
+### What is blocking and non-blocking statements in verilog?
+Inside always block, `=` represents blocking assignment and `<=` represents non-blocking assignment. Blocking assignment follows sequential execution like C program. Whereas, non-blocking statement follows parallel evaluation. Basically, in non-blocking assignment, RHS will be evaluated first, then the LHS is evaluated. 
+<br>
+Consider the following example. Here the output is depending on the past value of x which is dependednt on a and b and it appears like a flop.
+```
+module blocking_caveat (input a , input b , input  c, output reg d); 
+	reg x;
+	always @ (*)
+		begin
+		d = x & c;
+		x = a | b;
+	end
+endmodule
+```
+
+Conder another example, where we are trying to build a shift register.
+Here, due to improper use of assignment statements, instead of shift register, a single flop is inferred.
+```
+module code(input clk, input reset, input d, output reg q);
+	reg q0;
+	always@(posedge clk, posedge reset)
+	begin
+		if(reset)
+		begin
+			q0 = 1'b0;
+			q = 1'b0;
+		end
+		else
+		begin
+			q0 = d
+			q = q0;
+		end
+	end
+endmodule
+```
+<br>
+Here, proper shift register.
+```
+module code(input clk, input reset, input d, output reg q);
+	reg q0;
+	always@(posedge clk, posedge reset)
+	begin
+		if(reset)
+		begin
+			q0 = 1'b0;
+			q = 1'b0;
+		end
+		else
+		begin
+			q = q0;
+			q0 = d
+		end
+	end
+endmodule
+```
+<br>
+Also, the same design can be efficiently implemented using nonblocking stateements.
+```
+module code(input clk, input reset, input d, output reg q);
+	reg q0;
+	always@(posedge clk, posedge reset)
+	begin
+		if(reset)
+		begin
+			q0 <= 1'b0;
+			q <= 1'b0;
+		end
+		else
+		begin
+			q0 <= d
+			q <= q0;
+		end
+	end
+endmodule
+```
+
+So, we can conclude that nonblocking statements are a better option to design sequential circuits.
+
+
