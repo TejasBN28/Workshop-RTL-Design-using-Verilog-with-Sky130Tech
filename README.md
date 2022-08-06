@@ -580,6 +580,7 @@ endmodule
 ```
 <br>
 Here, proper shift register.
+
 ```
 module code(input clk, input reset, input d, output reg q);
 	reg q0;
@@ -598,6 +599,7 @@ module code(input clk, input reset, input d, output reg q);
 	end
 endmodule
 ```
+
 <br>
 Also, the same design can be efficiently implemented using nonblocking statements.
 
