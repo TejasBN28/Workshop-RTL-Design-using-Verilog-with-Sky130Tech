@@ -18,7 +18,8 @@ A report on 5 day workshop on RTL design and synthesis using opensource tools - 
   - [Day-4- GLS, Blocking vs Nonblocking and Synthesis-Simulation Mismatch](#4-GLS-Blocking-vs-Nonblocking-and-Synthesis-Simulation-Mismatch)
     - [4.1 GLS Concepts And Flow](#41-GLS-Concepts-And-Flow)
     - [4.2 Synthesis Simulation Mismatch](#42-Synthesis-Simulation-Mismatch)
-    - [4.3 
+    - [4.3 Missing Sensitivity List](#43-Missing-Sensitivity-List)
+    - [4.4 Blocking and Nonblocking Statements in Verilog](#44-Blocking-and-Nonblocking-Statements-in-Verilog)
   
 # 1. Introduction to Verilog RTL Design and Synthesis
 ## 1.1 Introduction
@@ -598,6 +599,7 @@ endmodule
 ```
 <br>
 Also, the same design can be efficiently implemented using nonblocking stateements.
+
 ```
 module code(input clk, input reset, input d, output reg q);
 	reg q0;
