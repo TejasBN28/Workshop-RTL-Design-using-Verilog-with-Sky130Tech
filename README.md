@@ -15,7 +15,7 @@ A report on 5 day workshop on RTL design and synthesis using opensource tools - 
     - [3.2 Combinational Logic Optimizations](#32-Combinational-Logic-Optimizations)
     - [3.3 Sequential Logic Optimizations](#33-Sequential-Logic-Optimizations)
     - [3.4 Sequential Optimization for unused outputs](#34-Sequential-Optimization-for-unused-outputs)
-  - [Day-4- GLS, blocking vs nonblocking and Synthesis-Simulation mismatch](#4-GLS-blocking-vs-nonblocking-and-Synthesis-Simulation-mismatch)
+  - [Day-4- GLS, Blocking vs Nonblocking and Synthesis-Simulation Mismatch](#4-GLS-Blocking-vs-Nonblocking-and-Synthesis-Simulation-Mismatch)
   
 # 1. Introduction to Verilog RTL Design and Synthesis
 ## 1.1 Introduction
@@ -484,7 +484,7 @@ Here, all the three flip flops are inferred.
 
 We can conclude that all the logicthat does not have imact in determining the primary output of the design, all of the those logics will be eliminated.
 
-# 4. GLS, blocking vs nonblocking and Synthesis-Simulation mismatch
+# 4. GLS, Blocking vs Nonblocking and Synthesis-Simulation Mismatch
 ## 4.1 GLS Concepts And Flow 
 ### What is GLS?
 GLS stands for gate level simulation. When we write the RTL code, we test it by giving it some stimulus through the testbench and check it for the desired specifications. Similarly, we run the netlist as the design under test (dut) with the same testbench. 
@@ -500,4 +500,6 @@ The possible reasons for Synthesis Simulation Mismatches are
  - Missing Sensitivity List
  - Blocking and Nonblocking Assignments
  - Non-standard Verilog Coding Practices
- 
+
+### Missing Sensitivity List
+The simulator works based on the activity, i.e., output will change only when input changes. 
