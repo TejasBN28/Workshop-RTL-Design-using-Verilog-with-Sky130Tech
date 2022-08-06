@@ -485,4 +485,19 @@ Here, all the three flip flops are inferred.
 We can conclude that all the logicthat does not have imact in determining the primary output of the design, all of the those logics will be eliminated.
 
 # 4. GLS, blocking vs nonblocking and Synthesis-Simulation mismatch
+## 4.1 GLS Concepts And Flow 
+### What is GLS?
+GLS stands for gate level simulation. When we write the RTL code, we test it by giving it some stimulus through the testbench and check it for the desired specifications. Similarly, we run the netlist as the design under test (dut) with the same testbench. 
+## Why GLS?
+Gate level simulation is done to verify the logical correctness of the design after synthesis. Also, it ensures the timing of the design. 
 
+<p align="center">
+  <img src="/Images/Pic38.png">
+</p><br>
+
+## 4.2 Synthesis Simulation Mismatch
+The possible reasons for Synthesis Simulation Mismatches are 
+ - Missing Sensitivity List
+ - Blocking and Nonblocking Assignments
+ - Non-standard Verilog Coding Practices
+ 
