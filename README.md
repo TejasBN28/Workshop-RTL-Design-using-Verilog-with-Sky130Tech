@@ -492,7 +492,7 @@ We can conclude that all the logicthat does not have imact in determining the pr
 ## 4.1 GLS Concepts And Flow 
 ### What is GLS?
 GLS stands for gate level simulation. When we write the RTL code, we test it by giving it some stimulus through the testbench and check it for the desired specifications. Similarly, we run the netlist as the design under test (dut) with the same testbench. 
-## Why GLS?
+### Why GLS?
 Gate level simulation is done to verify the logical correctness of the design after synthesis. Also, it ensures the timing of the design. 
 
 <p align="center">
