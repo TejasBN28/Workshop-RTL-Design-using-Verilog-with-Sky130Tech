@@ -598,7 +598,7 @@ module code(input clk, input reset, input d, output reg q);
 endmodule
 ```
 <br>
-Also, the same design can be efficiently implemented using nonblocking stateements.
+Also, the same design can be efficiently implemented using nonblocking statements.
 
 ```
 module code(input clk, input reset, input d, output reg q);
