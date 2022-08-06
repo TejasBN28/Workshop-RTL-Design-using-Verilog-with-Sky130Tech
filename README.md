@@ -798,6 +798,26 @@ always@(*)
 			y = inp[i];
 ```
 
+Consider an example of generating a mux using `for` loop,
+
+```
+module mux_generate (input i0 , input i1, input i2 , input i3 , input [1:0] sel  , output reg y);
+wire [3:0] i_int;
+assign i_int = {i3,i2,i1,i0};
+integer k;
+always @ (*)
+begin
+for(k = 0; k < 4; k=k+1) begin
+	if(k == sel)
+		y = i_int[k];
+end
+end
+endmodule
+```
+<p align="center">
+  <img src="/Images/Pic47.png">
+</p><br>
+
 Whereas, consider an example of Ripple carry adder, designed using full adders. Here, we can use generate block.
 
 ```
@@ -819,3 +839,7 @@ assign sum[7:0] = int_sum;
 assign sum[8] = int_co[7];
 endmodule
 ```
+<p align="center">
+  <img src="/Images/Pic48.png">
+</p><br>
+
