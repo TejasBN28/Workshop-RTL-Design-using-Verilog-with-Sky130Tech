@@ -15,6 +15,7 @@ A report on 5 day workshop on RTL design and synthesis using opensource tools - 
     - [3.2 Combinational Logic Optimizations](#32-Combinational-Logic-Optimizations)
     - [3.3 Sequential Logic Optimizations](#33-Sequential-Logic-Optimizations)
     - [3.4 Sequential Optimization for unused outputs](#34-Sequential-Optimization-for-unused-outputs)
+  - [Day-4- GLS, blocking vs nonblocking and Synthesis-Simulation mismatch](#4-GLS-blocking-vs-nonblocking-and-Synthesis-Simulation-mismatch)
   
 # 1. Introduction to Verilog RTL Design and Synthesis
 ## 1.1 Introduction
