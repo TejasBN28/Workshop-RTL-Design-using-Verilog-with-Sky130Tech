@@ -627,6 +627,7 @@ So, we can conclude that nonblocking statements are a better option to design se
 
 # 5. If, case, for and for generate
 ## 5.1 If and Case Construct
+### If statement
 If is mainly used to create conditional logic. Syntax of if statement is shown below.
 ```
 if (<condition 1>)
@@ -666,7 +667,41 @@ begin
 		count <= count+1;
 end
 ```
+Consider an example of incompletely specified if statement
+```
+module incomp_if (input i0 , input i1 , input i2 , output reg y);
+always @ (*)
+begin
+	if(i0)
+		y <= i1;
+end
+endmodule
+```
+Since there is no else statement, a D Latch is inferred.
+<p align="center">
+  <img src="/Images/Pic42.png">
+</p><br>
 
+Consider another example,
+```
+module incomp_if2 (input i0 , input i1 , input i2 , input i3, output reg y);
+always @ (*)
+begin
+	if(i0)
+		y <= i1;
+	else if (i2)
+		y <= i3;
+
+end
+endmodule
+```
+Since there is no else statement, a D Latch is inferred.
+<p align="center">
+  <img src="/Images/Pic43.png">
+</p><br>
+
+
+### Case Statement
 
 In `case` constructs, unlike if statements, there is no priority given to any conditions. All conditions are treated equally. The syntax of `case` construct is shown below.
 ```
