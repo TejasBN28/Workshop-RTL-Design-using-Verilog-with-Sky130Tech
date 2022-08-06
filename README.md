@@ -723,8 +723,61 @@ case(statement)
   - Partial assignment inside the case might also infer a latch. So assign all the outpits in all the segments of the case.
   - Never have overlapping cases. Unlike if, there is no priority in case. So, all the overlapping case statements gets executed.
   
+Consider an example of incompletely specied case statement,
+```
+module incomp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y);
+	always @ (*)
+	begin
+	case(sel)
+		2'b00 : y = i0;
+		2'b01 : y = i1;
+	endcase
+	end
+endmodule
+```
+Here also, a latch is inferred for case `2'b10` and `2'b11`.
+<p align="center">
+  <img src="/Images/Pic44.png">
+</p><br>
 
+The previous error can be rectified just by adding a default case,
+```
+module comp_case (input i0 , input i1 , input i2 , input [1:0] sel, output reg y);
+always @ (*)
+begin
+	case(sel)
+		2'b00 : y = i0;
+		2'b01 : y = i1;
+		default : y = i2;
+	endcase
+end
+endmodule
+```
+<p align="center">
+  <img src="/Images/Pic45.png">
+</p><br>
 
-
+Consider an example of partial case assignment, where a latch is inferred
+```
+module partial_case_assign (input i0 , input i1 , input i2 , input [1:0] sel, output reg y , output reg x);
+always @ (*)
+begin
+	case(sel)
+		2'b00 : begin
+			y = i0;
+			x = i2;
+			end
+		2'b01 : y = i1;
+		default : begin
+	         	  x = i1;
+			  y = i2;
+		 	 end
+	endcase
+end
+endmodule
+```
+<p align="center">
+  <img src="/Images/Pic46.png">
+</p><br>
 
 
