@@ -23,6 +23,7 @@ A report on 5 day workshop on RTL design and synthesis using opensource tools - 
   - [Day-5- If, case, for and for generate](#5-If-case-for-and-for-generate)
     - [5.1 If and Case Construct](#51-If-and-Case-Construct)
     - [5.2 Looping Constructs in Verilog](#52-Looping-Constructs-in-Verilog)
+  - [Acknowledgement](#6-Acknowledgment)
   
 # 1. Introduction to Verilog RTL Design and Synthesis
 ## 1.1 Introduction
@@ -843,3 +844,9 @@ endmodule
   <img src="/Images/Pic48.png">
 </p><br>
 
+# 6. Acknowledgment
+
+
+- Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
+- Madhav Rao, Associate Professor, IIIT Bangalore
+- V N Muralidhara, Associate Professor, IIIT Bangalore
