@@ -630,30 +630,64 @@ So, we can conclude that nonblocking statements are a better option to design se
 If is mainly used to create conditional logic. Syntax of if statement is shown below.
 ```
 if (<condition 1>)
-begin
------------
------------
-end
+	begin
+	-----------
+	-----------
+	end
 else if (<condition 2>)
-begin
------------
------------
-end
+	begin
+	-----------
+	-----------
+	end
 .
 .
 .
 else 
+	begin
+	----------
+	----------
+	end
+```
+
+This creates a priority logic, i.e., `condition 1` has the highest priority followed by `condition 2` and so on. This synthesis a cascaded mux in the design. 
+<p align="center">
+  <img src="/Images/Pic41.png">
+</p><br>
+
+### Dangers of using if:
+The main danger of using if statements is inferred latches in the design. This may occur if we write incompletely specified if statements. However, sometimes it is fine to write imcomplete if statements as in the case of counter.
+
+```
+always@(posedge clk)
 begin
-----------
-----------
+	if(reset)
+		count <= 3'b000;
+	else if(enable)
+		count <= count+1;
 end
 ```
 
 
-
-
-
-
+In `case` constructs, unlike if statements, there is no priority given to any conditions. All conditions are treated equally. The syntax of `case` construct is shown below.
+```
+case(statement)
+  case1: begin
+       --------
+	 --------
+	 end
+ case2: begin
+	     --------
+	 --------
+	 end
+ default:
+ endcase
+ ```
+ 
+ ### Caveats of `case` constructs:
+  - Incomplete case constructs inferres a latch. So, always try to have a default statement in case.
+  - Partial assignment inside the case might also infer a latch. So assign all the outpits in all the segments of the case.
+  - Never have overlapping cases. Unlike if, there is no priority in case. So, all the overlapping case statements gets executed.
+  
 
 
 
