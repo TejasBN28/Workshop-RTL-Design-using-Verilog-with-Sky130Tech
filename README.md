@@ -58,6 +58,9 @@ iverilog good_mux.v tb_good_mux.v
 ./a.out
 gtkwave tb_good_mux.vcd
 ```
+<p align="center">
+  <img src="/Images/s1.png">
+</p>
 
 <p align="center">
   <img width=""1000 height="250" src="/Images/Pic3.png">
@@ -96,6 +99,9 @@ abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 write_verilog -noattr good_mux_synth.v
 ```
+<p align="center">
+  <img src="/Images/s2.png">
+</p>
 
 The generated circuit and the netlist are shown below. 
 <p align="center">
